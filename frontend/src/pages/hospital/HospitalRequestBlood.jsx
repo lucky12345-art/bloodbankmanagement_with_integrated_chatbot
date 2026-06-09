@@ -20,7 +20,7 @@ const HospitalRequestBlood = () => {
       try {
         setLabsLoading(true);
         const token = localStorage.getItem("token");
-        const res = await axios.get("/api/facility/labs", {
+        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/facility/labs", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setLabs(res.data.labs || []);
@@ -42,8 +42,7 @@ const HospitalRequestBlood = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.post(
-        "/api/hospital/blood/request",
+      const response = await axios.post("${import.meta.env.VITE_API_URL}/api/hospital/blood/request",
         form,
         { headers: { Authorization: `Bearer ${token}` } }
       );

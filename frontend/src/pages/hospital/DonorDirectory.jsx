@@ -53,7 +53,7 @@ const DonorDirectory = () => {
       });
 
       const res = await axios.get(
-        `/api/hospital/donors?${queryParams}`,
+        `${import.meta.env.VITE_API_URL}/api/hospital/donors?${queryParams}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -84,7 +84,7 @@ const DonorDirectory = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `/api/hopital/donors/${donorId}/contact`,
+        `${import.meta.env.VITE_API_URL}/api/hopital/donors/${donorId}/contact`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

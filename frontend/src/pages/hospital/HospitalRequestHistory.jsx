@@ -12,7 +12,7 @@ const HospitalRequestHistory = () => {
       try {
         setLoading(true);
         const token = localStorage.getItem("token");
-        const res = await axios.get("/api/hospital/blood/requests", {
+        const res = await axios.get("${import.meta.env.VITE_API_URL}/api/hospital/blood/requests", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

@@ -187,7 +187,7 @@ const DashboardLayout = ({ userRole = "donor" }) => {
   };
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const UserData = async () => {
       setIsLoading(true); // Start loading
       const token = localStorage.getItem("token");
       if (!token) {
@@ -202,7 +202,7 @@ const DashboardLayout = ({ userRole = "donor" }) => {
       while (attempt < maxRetries) {
         try {
 
-          const apiUrl = `${import.meta.env.VITE_API_URL || ""}/api/auth/profile`;
+          const apiUrl = `${import.meta.env.VITE_API_URL || ""}auth/profile`;
           const res = await fetch(apiUrl, {
             headers: { Authorization: `Bearer ${token}` },
           });

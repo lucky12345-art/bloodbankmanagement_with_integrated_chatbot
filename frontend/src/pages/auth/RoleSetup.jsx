@@ -4,7 +4,7 @@
 //   const { user } = useUser(); // Clerk
 
 //   const handleSubmit = async () => {
-//     await axios.post("/api/users/create", {
+//     await axios.post("${import.meta.env.VITE_API_URL}/api/users/create", {
 //       clerkId: user.id,
 //       email: user.primaryEmailAddress.emailAddress,
 //       name,
