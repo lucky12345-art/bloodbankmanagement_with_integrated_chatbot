@@ -42,6 +42,8 @@ app.use("/api/hospital", hospitalRoutes);
 
 
 // 🗄️ DB Connection
+console.log(process.env.MONGO_URI);
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected ✅"))
